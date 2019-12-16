@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js">
+		</script>
+		<script type="text/javascript" src="js/bootstrap.js">
+		</script>
+		<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js">
+		</script>
+		<!--正则-->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/validator.css" />
+	</head>
+	<script type="text/javascript" src="js/jquery-1.11.1.js">
+	</script>
+	<script type="text/javascript" src="js/jquery.validator.js">
+	</script>
+	<!--end-->
+
+	<style type="text/css">
+		body {
+			background: url(img2/cover.jpg);
+			animation-name: myfirst;
+			/*animation-duration: 12s;*/
+			/*变换时间*/
+			/*animation-delay: 2s;*/
+			/*动画开始时间*/
+			/*animation-iteration-count: infinite;*/
+			/*下一周期循环播放*/
+			/*animation-play-state: running;*/
+			/*动画开始运行*/
+		}
+		/*@keyframes myfirst  {
+				0% {
+					background: url("img3/u=1076532205,3706931193&fm=26&gp=0.jpg");
+				}
+				34% {
+					background: url("img3/u=1372951354,2817547281&fm=26&gp=0.jpg");
+				}
+				67% {
+					background: url("img3/u=2345997553,2607476395&fm=26&gp=0.jpg");
+				}
+				100% {
+					background: url("img3/u=3688239730,2415981526&fm=15&gp=0.jpg");
+				}
+				
+			}*/
+		
+		.form {
+			background: rgba(255, 255, 255, 0.2);
+			width: 400px;
+			margin: 120px auto;
+		}
+		/*阴影*/
+		
+		.fa {
+			display: inline-block;
+			top: 27px;
+			left: 6px;
+			position: relative;
+			color: #ccc;
+		}
+		
+		input[type="text"],
+		input[type="password"] {
+			padding-left: 26px;
+		}
+		
+		.checkbox {
+			padding-left: 21px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("#denglu").click(function() {
+				var username1 = $("#username").val();
+				var password1 = $("#password").val();
+				if(username1 == "admin" && password1 == "admin") {
+					alert("Success!");
+					window.location.href = "Main.html"
+					return true;
+				} else {
+					alert("NO!");
+					window.location.href = "denglu.html"
+					return false;
+				}
+			});
+		});
+	</script>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="form row">
+				<div class="form-horizontal col-md-offset-3" id="login_form">
+					<h3 class="form-title">LOGIN</h3>
+					<div class="col-md-9">
+						<div class="form-group">
+							<i class="fa fa-user fa-lg"></i>
+							<input class="form-control required" type="text" placeholder="Username" id="username" name="username" autofocus="autofocus" maxlength="20" validate="form" require="请输入姓名" />
+						</div>
+						<div class="form-group">
+							<i class="fa fa-lock fa-lg"></i>
+							<input class="form-control required" type="password" placeholder="Password" id="password" name="password" maxlength="8" />
+						</div>
+						<div class="form-group">
+							<label class="checkbox">
+                            <input type="checkbox" name="remember" value="1"/>记住我
+                        </label>
+						</div>
+						<div class="form-group col-md-offset-9">
+							<button id="denglu" type="submit" class="btn btn-success pull-right" name="submit" style="background: #1C94C4;">登录</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="demo">
+			
+			
+		</div>
+
+	</body>
+
+</html>

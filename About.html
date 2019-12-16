@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css2/new_file.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js">
+		</script>
+		<script type="text/javascript" src="js/bootstrap.js">
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js">
+		</script>
+		<style type="text/css">
+			body {
+				background: #F4F4F4;
+			}
+			#li{
+				font-size: 15px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$("#tabs").tabs();
+				$(".imglist").hover(function() {
+					$(this).find("p.btn1").stop().fadeIn();
+					$(this).find("p.date").stop().fadeOut();
+				}, function() {
+					$(this).find("p.btn1").stop().fadeOut();
+					$(this).find("p.date").stop().fadeIn();
+
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<!--导航-->
+		<div class="one">
+			<div class="col-lg-12">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+							<a class="navbar-brand" href="#">Brand</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="Main.html">主頁<span class="sr-only">(current)</span></a>
+								</li>
+								<li>
+									<a href="lyb.html">雜談</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">技術資訊<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="ziyuanfenxiang.html">資源分享</a>
+										</li>
+										<li>
+											<a href="#">在綫工具</a>
+										</li>
+										<li>
+											<a href="About.html">关于我</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default" style="background: #31B0D5;">搜索</button>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="denglu.html">登錄</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">關於網站</a>
+										</li>
+										<li>
+											<a href="#">其他鏈接</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+
+			</div>
+		</div>
+
+		</div>
+		<!--part 1 end-->
+		<!--part2-->
+		<div class="two">
+			<div class="container">
+				<div class="col-md-7">
+					<div class="panel panel-default" style="margin-top: 10%;">
+						<div class="panel-heading" style="background: #DCDCDC; font-family: '微软雅黑';font-size:x-large;font-weight: bold;">关于博客</div>
+						<div class="panel-body">					
+							<li><span class="label label-primary" style="font-size:smaller;">Bootstrap</span>
+								<span class="label label-success" style="font-size:smaller;">Django</span>
+								<span class="label label-info" style="font-size:smaller;">Python</span></li>
+									<hr />
+							<li>Simple is better than complex.</li>
+							<li id="li">本网站是一个个人博客网站，主要分享博主的编程学习心得</li>
+							<li id="li">网站主要使用 django + mysql + redis + nginx 搭建，部署方式为容器化部署，使用的是 docker 镜像加上 docker-compose 编排，同时在测试环境使用 Jenkins 实现 CI/CD 自动化构建和部署</li>
+							<li id="li">网站用到的很多技术其实并非必须，但是我做这个网站的目的是为了把所学的东西都运用起来，所以会尽可能使用更多的技术去扩展网站的功能</li>
+							<hr />
+							<p style="font-family: '微软雅黑';font-size: x-large;font-weight: bold;">关于博主</p>
+							<li id="li">人生苦短，我用 Python！Docker！Jenkins！</li>
+							<li id="li">Python 技能树：Django/Flask 的 web 框架，requests/scrapy/selenium 为主的爬虫框架，正则表达式/CSS/Xpath/ 等信息提取方式，写过 PYQT5 的多线程 GUI 桌面应用，工作上面一般都是 Python 的自动化编程</li>
+							<li id="li">Linux 技能树：Ansible 自动化部署的使用，云服务部署及运维、常用 shell 命令及脚本编写</li>
+							<li id="li">CI/CD 技能树：Jenkins 持续构建和打包，容器化构建和部署，个人部署通常使用 docker 及 docker-compose 的方式，由于公司使用 murano 作为编排，所以很可惜工作上没有接触到 K8S，目前是尝试自己入门 K8S</li>
+							<li id="li">数据库技能树：常用 MySQL 作为 web 后端数据库，MongoDB 作为爬虫信息存储，Redis 用作缓存，熟悉常规的 CURD 操作</li>
+							<li id="li">前端技能树：写过 vue 项目，了解基本用法；熟悉 HTML 基本规范，对 CSS 常规用法了解，JavaScript 主要使用 jQuery 库，熟悉 Bootstrap 框架，熟悉前端 SEO</li>
+							<li id="li">博主 Github 地址：https://github.com/Hopetree</li>
+							<li id="li">联系邮箱：zlwork2014@163.com </li>
+							<p style="font-family: '微软雅黑';font-size: x-large;font-weight: bold;">功能介绍</p>
+							<hr />
+							<li id="li">文章分类、标签、浏览量统计以及规范的 SEO 设置</li>
+							<li id="li">友情链接和推荐工具网站的展示</li>
+							<li id="li">RSS 博客订阅功能及规范的 Sitemap 网站地图</li>
+							<li id="li">RESTful API 风格的 API 接口 </li>
+							<p style="font-family: '微软雅黑';font-size: x-large;font-weight: bold;">网站支持</p>
+							<hr />
+							<li id="li">前端使用 Bootstrap4 + jQuery 支持响应式；图标使用 Font Awesome</li>
+							<li id="li">网站部署使用 docker</li>
+							<li id="li">其他依赖查看网站源码解释</li>
+						</div>
+					</div>
+
+				</div>
+				<div class="No8">
+					<div class="col-md-5">
+						<div id="tabs">
+							<ul>
+								<li>
+									<a href="#tabs-1">Demo</a>
+								</li>
+								<li>
+									<a href="#tabs-2">访问量</a>
+								</li>
+								<li>
+									<a href="#tabs-3">我的位置</a>
+								</li>
+							</ul>
+							<div id="tabs-1">
+								<div class="No3">
+									<a href="https://github.com/"><img src="img2/github.png" width="50px" height="50px" /></a>
+									<p>Github</p>
+
+								</div>
+
+								<div class="No3">
+									<img src="img2/blog.png" width="50px" height="50px" />
+									<p>Timeline</p>
+								</div>
+								<div class="No3">
+									<img src="img2/rss.png" width="50px" height="50px" />
+									<p>Rss訂閲</p>
+								</div>
+
+							</div>
+							<div id="tabs-2">
+								<div id="box">
+									<script type="text/javascript">
+										function setStorage() {
+											if(localStorage.counter) {
+												localStorage.counter = Number(localStorage.counter) + 1;
+											} else {
+												localStorage.counter = 1;
+											}
+											return localStorage.counter;
+										}
+										var counter = setStorage();
+										var oBox = document.getElementById('box');
+										oBox.innerHTML = "访问量：" + counter + "次";
+									</script>
+								</div>
+
+							</div>
+							<div id="tabs-3">
+								<button type="button" class="btn btn-primary" onclick="window.open('Map.html')" style="width: 400px;">Map</button>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!--part2 end-->
+		    <!--分类-->
+		    <div id="La">
+					<div class="col-lg-5">
+						<div class="list-group" style="font-weight: bold; margin-top: -770px; margin-left: -162%;">
+							<a href="#" class="list-group-item active">
+								文章分类
+							</a>
+							<a href="#" class="list-group-item">CI/CD
+								<span class="badge" style="background: #66512C">12</span></a>
+							<a href="#" class="list-group-item">Linux 笔记
+								<span class="badge" style="background: #843534">13</span></a>
+							<a href="#" class="list-group-item">Notebook
+								<span class="badge" style="background: #262626">3</span></a>
+							<a href="#" class="list-group-item">Python Web开发
+								<span class="badge" style="background:gray">4</span></a>
+							<a href="#" class="list-group-item">Python 基础
+								<span class="badge" style="background:green">66</span></a>
+							<a href="#" class="list-group-item">Python 爬虫
+								<span class="badge" style="background: #D58512">55</span></a>
+							<a href="#" class="list-group-item">Web 前端
+								<span class="badge" style="background: #3C763D">0</span></a>
+							<a href="#" class="list-group-item">容器化
+								<span class="badge" style="background: blue">4</span></a>
+							<a href="#" class="list-group-item">自动化
+								<span class="badge" style="background: black">14</span></a>
+
+						</div>
+
+					</div>
+
+				</div>
+			<!--分类-->
+			<!--標簽云-->
+			<div class="four">
+			<div class="panel panel-default" id="panl">
+				<div class="panel-heading" style="font-family: '微软雅黑';font-weight: bold;background:gainsboro; margin-top:80%;">標簽云</div>
+				<div class="panel-body">
+					<span id="bqy" class="label label-default">Java</span>
+					<span id="bqy" class="label label-default">python</span>
+					<span id="bqy" class="label label-primary">C</span>
+					<span id="bqy" class="label label-success">C++</span>
+					<span id="bqy" class="label label-info">C#</span>
+					<span id="bqy" class="label label-primary">Ai</span>
+					<span id="bqy" class="label label-success">Html5</span>
+					<p></p>
+					<span id="bqy" class="label label-info">Css</span>
+					<span id="bqy" class="label label-success">大數據</span>
+					<span id="bqy" class="label label-info">雲計算</span>
+					<span id="bqy" class="label label-warning">DJango</span>
+					<span id="bqy" class="label label-info">Cache</span>
+					<p></p>
+					<span id="bqy" class="label label-primary">Docker</span>
+					<span id="bqy" class="label label-success">SSH</span>
+					<span id="bqy" class="label label-danger">VUE</span>
+				</div>
+			</div>
+
+		</div>
+			
+			<!--標簽云-->
+			<!--特效-->
+			<!--特效-->
+		<script type="text/javascript">
+			! function() {
+				function A(a, b, c) {
+					return a.getAttribute(b) || c
+				}
+
+				function F(a) {
+					return document.getElementsByTagName(a);
+				}
+
+				function D() {
+					var c = F("script"),
+						a = c.length,
+						b = c[a - 1];
+					return {
+						l: a,
+						z: A(b, "zIndex", -1),
+						o: A(b, "opacity", 0.5),
+						c: A(b, "color", "0,0,0"),
+						n: A(b, "count", 199)
+					}
+				}
+
+				function E() {
+					x = i.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+					B = i.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				}
+
+				function M() {
+					J.clearRect(0, 0, x, B);
+					var c = [I].concat(v);
+					var b, d, a, g, e, f;
+					v.forEach(function(h) {
+							h.x += h.xa,
+								h.y += h.ya,
+								h.xa *= h.x > x || h.x < 0 ? -1 : 1,
+								h.ya *= h.y > B || h.y < 0 ? -1 : 1,
+								J.fillRect(h.x - 0.5, h.y - 0.5, 1, 1);
+							for(d = 0; d < c.length; d++) {
+								b = c[d];
+								if(h !== b && null !== b.x && null !== b.y) {
+									g = h.x - b.x;
+									e = h.y - b.y;
+									f = g * g + e * e;
+									f < b.max && (b === I && f >= b.max / 2 && (h.x -= 0.03 * g, h.y -= 0.03 * e), a = (b.max - f) / b.max, J.beginPath(),
+										J.lineWidth = a / 2, J.strokeStyle = "rgba(" + w.c + "," + (a + 0.2) + ")", J.moveTo(h.x, h.y), J.lineTo(b.x,
+											b.y), J.stroke())
+								}
+							}
+							c.splice(c.indexOf(h), 1);
+						}),
+						C(M);
+				}
+
+				var i = document.createElement("canvas"),
+					w = D(),
+					L = "c_n" + w.l, //c_n2
+					J = i.getContext("2d"),
+					x,
+					B,
+					C = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(a) {
+						window.setTimeout(a, 1000 / 45)
+					},
+					N = Math.random,
+					I = {
+						x: null,
+						y: null,
+						max: 20000
+					};
+				i.id = L;
+				i.style.cssText = "position:fixed;top:0;left:0;z-index:" + w.z + ";opacity:" + w.o;
+				F("body")[0].appendChild(i);
+				E();
+				window.onresize = E;
+				window.onmousemove = function(a) {
+					a = a || window.event,
+						I.x = a.clientX,
+						I.y = a.clientY
+				};
+				window.onmouseout = function() {
+					I.x = null,
+						I.y = null
+				};
+				for(var v = [], z = 0; w.n > z; z++) {
+					var G = N() * x,
+						H = N() * B,
+						y = 2 * N() - 1,
+						K = 2 * N() - 1;
+					v.push({
+						x: G,
+						y: H,
+						xa: y,
+						ya: K,
+						max: 6000
+					});
+				}
+				setTimeout(function() {
+					M()
+				}, 100)
+			}();
+		</script>
+		<!--特效 end-->
+			<!--特效-->
+			<!--地址-->
+			<div class="footer">
+			<div class="container">
+				<p>Copyright © 2019 Hopetree. Powered by Django.</p>
+				<p>粤ICP备XXXXXXX号-3 | Sitemap | 站长统计 | 网站已续航 XXXX天</p>
+			</div>
+		</div>
+			<!--地址-->
+	</body>
+
+</html>

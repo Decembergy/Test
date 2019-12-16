@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css2/lyb.css" />
+		<link rel="stylesheet" type="text/css" href="css2/new_file.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js">
+		</script>
+		<script type="text/javascript" src="js/bootstrap.js">
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js">
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$("#tabs").tabs();
+				$(".imglist").hover(function() {
+					$(this).find("p.btn1").stop().fadeIn();
+					$(this).find("p.date").stop().fadeOut();
+				}, function() {
+					$(this).find("p.btn1").stop().fadeOut();
+					$(this).find("p.date").stop().fadeIn();
+
+				});
+
+			});
+		</script>
+		<style type="text/css">
+		}
+		</style>
+	</head>
+
+	<body id="body2">
+		<!--导航-->
+		<div class="one">
+			<div class="col-lg-12">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+							<a class="navbar-brand" href="#">Brand</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="Main.html">主頁<span class="sr-only">(current)</span></a>
+								</li>
+								<li>
+									<a href="lyb.html">雜談</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">技術資訊<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="ziyuanfenxiang.html">資源分享</a>
+										</li>
+										<li>
+											<a href="#">在綫工具</a>
+										</li>
+										<li>
+											<a href="About.html">关于我</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default" style="background: #31B0D5;">搜索</button>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="#">登錄</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">關於網站</a>
+										</li>
+										<li>
+											<a href="#">其他鏈接</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+
+			</div>
+		</div>
+
+		</div>
+		<!--part 1 end-->
+		<div class="two" >
+			<div class="container">
+				<div class="col-lg-10" >
+					<div id="qq" style="background:#E7E7E7;">
+						<p>有什么新鲜事想告诉大家?</p>
+						<div class="message" contentEditable='true' style="border: 1px solid black;"></div>
+						<div class="But" >
+							<img src="" class='bq' />
+							<span class='submit' style="background: grey;">发表</span>
+							<!--face begin-->
+							<!--face end-->
+						</div>
+					</div>
+					<!--qq end-->
+					<!--msgCon begin-->
+					<div class="msgCon"></div>
+					<script type="text/javascript">
+						//从缓存中获取数据并渲染
+						let msgBoxList = JSON.parse(window.localStorage.getItem('msgBoxList')) || [];
+						innerHTMl(msgBoxList)
+
+						//点击发表按扭，发表内容
+						$("span.submit").click(function() {
+							let txt = $(".message").html(); //获取输入框内容
+							if(!txt) {
+								$('.message').focus(); //自动获取焦点
+								return;
+							}
+							let obj = {
+								msg: txt
+							}
+							msgBoxList.unshift(obj) //添加到数组里
+							window.localStorage.setItem('msgBoxList', JSON.stringify(msgBoxList)) //将数据保存到缓存
+							innerHTMl([obj]) //渲染当前输入框内容
+							$('.message').html('') // 清空输入框
+
+						});
+
+						//删除当前数据
+						$("body").on('click', '.del', function() {
+							let index = $(this).parent().parent().index();
+							msgBoxList.splice(index, 1)
+							window.localStorage.setItem('msgBoxList', JSON.stringify(msgBoxList)) //将数据保存到缓存
+							$(this).parent().parent().remove()
+						})
+
+						//渲染html
+						function innerHTMl(List) {
+							List = List || []
+							List.forEach(item => {
+								let str =
+									`<div class='msgBox'>
+					<div class="headUrl">
+						<img src='img2/github.png' width='50' height='50'>
+						<div>
+							<span class="title">December</span>
+						</div>
+						<a class="del">删除</a>
+					</div>
+					<div class='msgTxt'>
+						${item.msg}
+					</div>
+				</div>`
+								$(".msgCon").prepend(str);
+							})
+						}
+					</script>
+					<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<!--part2end-->
+		<!--part3-->
+		<marquee direction=left>gogogo</marquee>
+		<marquee direction=right>您的肯定，我的荣耀。</marquee>
+		<marquee behavior=scroll>啦啦啦，我一圈一圈绕着走！</marquee>
+		<marquee behavior=slide>啦啦啦，我只走一次就歇了！</marquee>
+		<marquee behavior=alternate>hi</marquee>
+		<!--<marquee bgcolor=aliceblue>啦啦啦，我会移动耶！</marquee>-->
+		<marquee scrollamount=20>我來啦</marquee>
+
+		<!--part3 end-->
+		<!--特效-->
+		<script type="text/javascript">
+			! function() {
+				function A(a, b, c) {
+					return a.getAttribute(b) || c
+				}
+
+				function F(a) {
+					return document.getElementsByTagName(a);
+				}
+
+				function D() {
+					var c = F("script"),
+						a = c.length,
+						b = c[a - 1];
+					return {
+						l: a,
+						z: A(b, "zIndex", -1),
+						o: A(b, "opacity", 0.5),
+						c: A(b, "color", "0,0,0"),
+						n: A(b, "count", 199)
+					}
+				}
+
+				function E() {
+					x = i.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+					B = i.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				}
+
+				function M() {
+					J.clearRect(0, 0, x, B);
+					var c = [I].concat(v);
+					var b, d, a, g, e, f;
+					v.forEach(function(h) {
+							h.x += h.xa,
+								h.y += h.ya,
+								h.xa *= h.x > x || h.x < 0 ? -1 : 1,
+								h.ya *= h.y > B || h.y < 0 ? -1 : 1,
+								J.fillRect(h.x - 0.5, h.y - 0.5, 1, 1);
+							for(d = 0; d < c.length; d++) {
+								b = c[d];
+								if(h !== b && null !== b.x && null !== b.y) {
+									g = h.x - b.x;
+									e = h.y - b.y;
+									f = g * g + e * e;
+									f < b.max && (b === I && f >= b.max / 2 && (h.x -= 0.03 * g, h.y -= 0.03 * e), a = (b.max - f) / b.max, J.beginPath(),
+										J.lineWidth = a / 2, J.strokeStyle = "rgba(" + w.c + "," + (a + 0.2) + ")", J.moveTo(h.x, h.y), J.lineTo(b.x,
+											b.y), J.stroke())
+								}
+							}
+							c.splice(c.indexOf(h), 1);
+						}),
+						C(M);
+				}
+
+				var i = document.createElement("canvas"),
+					w = D(),
+					L = "c_n" + w.l, //c_n2
+					J = i.getContext("2d"),
+					x,
+					B,
+					C = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(a) {
+						window.setTimeout(a, 1000 / 45)
+					},
+					N = Math.random,
+					I = {
+						x: null,
+						y: null,
+						max: 20000
+					};
+				i.id = L;
+				i.style.cssText = "position:fixed;top:0;left:0;z-index:" + w.z + ";opacity:" + w.o;
+				F("body")[0].appendChild(i);
+				E();
+				window.onresize = E;
+				window.onmousemove = function(a) {
+					a = a || window.event,
+						I.x = a.clientX,
+						I.y = a.clientY
+				};
+				window.onmouseout = function() {
+					I.x = null,
+						I.y = null
+				};
+				for(var v = [], z = 0; w.n > z; z++) {
+					var G = N() * x,
+						H = N() * B,
+						y = 2 * N() - 1,
+						K = 2 * N() - 1;
+					v.push({
+						x: G,
+						y: H,
+						xa: y,
+						ya: K,
+						max: 6000
+					});
+				}
+				setTimeout(function() {
+					M()
+				}, 100)
+			}();
+		</script>
+		<!--特效 end-->
+
+	</body>
+
+</html>

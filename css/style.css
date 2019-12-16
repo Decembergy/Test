@@ -1,0 +1,183 @@
+/*资讯*/
+.No1{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No1 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No1 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;
+	
+}
+.No9{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No9 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No9 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;	
+}
+.No4{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No4 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No4 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;	
+}
+.No5{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No5 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No5 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;	
+}
+.No6{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No6 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No6 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;	
+}
+.No7{
+	border: 0px solid gray;
+	height: 150px;
+}
+.No7 h1{
+	font-size: 20px;
+	color: #449D44;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.No7 p{
+	font: "微软雅黑";
+	font-size: 17px;
+	padding: 0 10px;	
+}
+/*资讯end*/
+.No3{
+	float:left ;
+	margin-left: 40px;
+	/*margin-top:20px ;*/
+}
+
+#tabs{
+	height: 150px;
+}
+#La{
+	margin-top: -200px;
+	float: right;	
+}
+.list-group{
+	width: 444px;
+	height:300px;
+}
+.end{
+	margin-left: 180px;
+
+}
+#body1{
+	background: #F4F4F4;
+}
+.two{
+	margin-bottom: 60px;
+}
+.footer{
+	margin-top: 60px;
+	height: 60px;
+	background: #ddd;
+	text-align: center;
+}
+#tabs ul{
+	background: none;
+	border: none;
+}
+.imglist{
+	position: absolute;
+}
+.btn1{
+	position: absolute;
+	top: 275px;
+	width: 220px;
+	display: none;
+}
+.btn{
+	width: 220px;
+}
+.four{
+	float: right;
+	margin-right: 287px;
+	margin-top: -900px;
+	position: relative;
+}
+#panl{
+	width: 444px;
+	height: 150px;
+	
+}
+#bqy{
+	font-size: larger;
+}
+#panMain{
+	margin-top: -30px;
+	position: relative;
+}
+#box{
+	position: absolute;
+	/*background: #DCDCDC;*/
+	width: 200px;
+	height: 50px;
+	/*left: 25%;*/
+	font-family: "微软雅黑";
+	font-weight: bold;
+	font-size: large;	
+}
+#La{
+	position: relative;
+}
+#rili{
+	width: 450px;
+	height: 200px;
+	margin-top: -750px;
+	margin-left: 56.9%;
+}
+#youqinglianjie{
+	margin-top: -600px;
+	width: 445px;
+}

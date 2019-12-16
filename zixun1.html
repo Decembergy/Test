@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--资讯-->
+		<link rel="stylesheet" type="text/css" href="css2/zixun1.css" />
+		<!--资讯end-->
+		<link rel="stylesheet" type="text/css" href="css2/new_file.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js">
+		</script>
+		<script type="text/javascript" src="js/bootstrap.js">
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.css" />
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js">
+		</script>
+		<script type="text/javascript">
+			! function() {
+				function A(a, b, c) {
+					return a.getAttribute(b) || c
+				}
+
+				function F(a) {
+					return document.getElementsByTagName(a);
+				}
+
+				function D() {
+					var c = F("script"),
+						a = c.length,
+						b = c[a - 1];
+					return {
+						l: a,
+						z: A(b, "zIndex", -1),
+						o: A(b, "opacity", 0.5),
+						c: A(b, "color", "0,0,0"),
+						n: A(b, "count", 199)
+					}
+				}
+
+				function E() {
+					x = i.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+					B = i.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				}
+
+				function M() {
+					J.clearRect(0, 0, x, B);
+					var c = [I].concat(v);
+					var b, d, a, g, e, f;
+					v.forEach(function(h) {
+							h.x += h.xa,
+								h.y += h.ya,
+								h.xa *= h.x > x || h.x < 0 ? -1 : 1,
+								h.ya *= h.y > B || h.y < 0 ? -1 : 1,
+								J.fillRect(h.x - 0.5, h.y - 0.5, 1, 1);
+							for(d = 0; d < c.length; d++) {
+								b = c[d];
+								if(h !== b && null !== b.x && null !== b.y) {
+									g = h.x - b.x;
+									e = h.y - b.y;
+									f = g * g + e * e;
+									f < b.max && (b === I && f >= b.max / 2 && (h.x -= 0.03 * g, h.y -= 0.03 * e), a = (b.max - f) / b.max, J.beginPath(),
+										J.lineWidth = a / 2, J.strokeStyle = "rgba(" + w.c + "," + (a + 0.2) + ")", J.moveTo(h.x, h.y), J.lineTo(b.x,
+											b.y), J.stroke())
+								}
+							}
+							c.splice(c.indexOf(h), 1);
+						}),
+						C(M);
+				}
+
+				var i = document.createElement("canvas"),
+					w = D(),
+					L = "c_n" + w.l, //c_n2
+					J = i.getContext("2d"),
+					x,
+					B,
+					C = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(a) {
+						window.setTimeout(a, 1000 / 45)
+					},
+					N = Math.random,
+					I = {
+						x: null,
+						y: null,
+						max: 20000
+					};
+				i.id = L;
+				i.style.cssText = "position:fixed;top:0;left:0;z-index:" + w.z + ";opacity:" + w.o;
+				F("body")[0].appendChild(i);
+				E();
+				window.onresize = E;
+				window.onmousemove = function(a) {
+					a = a || window.event,
+						I.x = a.clientX,
+						I.y = a.clientY
+				};
+				window.onmouseout = function() {
+					I.x = null,
+						I.y = null
+				};
+				for(var v = [], z = 0; w.n > z; z++) {
+					var G = N() * x,
+						H = N() * B,
+						y = 2 * N() - 1,
+						K = 2 * N() - 1;
+					v.push({
+						x: G,
+						y: H,
+						xa: y,
+						ya: K,
+						max: 6000
+					});
+				}
+				setTimeout(function() {
+					M()
+				}, 100)
+			}();
+		</script>
+
+	</head>
+
+	<body style="width:1706px;height:768px; background: #F4F4F4;">
+		<!--导航-->
+		<div class="one">
+			<div class="col-lg-12">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+							<a class="navbar-brand" href="#">Brand</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="Main.html">主頁<span class="sr-only">(current)</span></a>
+								</li>
+								<li>
+									<a href="lyb.html">雜談</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">技術資訊<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="ziyuanfenxiang.html">資源分享</a>
+										</li>
+										<li>
+											<a href="#">在綫工具</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default" style="background: #31B0D5;">搜索</button>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="#">登錄</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">關於網站</a>
+										</li>
+										<li>
+											<a href="#">其他鏈接</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+
+			</div>
+		</div>
+		</div>
+		<!--part 1 end-->
+		<!--part2-->
+		<div class="zixun">
+			<div class="container">
+				<div class="col-lg-10">
+					<ol class="breadcrumb">
+						<li>
+							<a href="Main.html">Home</a>
+						</li>
+						<li>
+							<a href="Main.html">资讯</a>
+						</li>
+						<li class="active" style="color: #269ABC;">[Python3网络爬虫开发实战] 12.3- pyspider 用法详解</li>
+					</ol>
+
+				</div>
+
+			</div>
+
+		</div>
+		</div>
+		<!--part2 end-->
+		<!--part3-->
+		<div class="zixunpanl">
+			<div class="container">
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-heading" style=" background:#DCDCDC;">Panel heading without title</div>
+						<div class="panel-body" style="border: 1px solid gray; height: 800px;">
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color: #1C94C4;">[Python3网络爬虫开发实战] 13.2 – Scrapy 入门</p><br />
+
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color:  black;;">13.2 Scrapy 入门</p>
+							<p>接下来介绍一个简单的项目，完成一遍 Scrapy 抓取流程。通过这个过程，我们可以对 Scrapy 的基本用法和原理有大体了解</p>
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color: black;;">1. 本节目标</p>
+							<p>本节要完成的任务如下。</p>
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color:  black;;">2. 准备工作</p>
+							<p>我们需要安装好 Scrapy 框架、MongoDB 和 PyMongo 库。如果尚未安装，请参照上一节的安装说明。</p>
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color: black;;">3. 创建项目</p>
+							<p>创建一个 Scrapy 项目，项目文件可以直接用 scrapy 命令生成，命令如下所示：这个命令可以在任意文件夹运行。如果提示权限问题，可以加 sudo 运行该命令。这个命令将会创建一个名为 tutorial 的文件夹，文件夹结构如下所示：</p>
+							<p style="font: '微软雅黑'; font-size: large; font-weight: bold;color: black;">4. 创建 Spider</p>
+							<p>Spider 是自己定义的类，Scrapy 用它来从网页里抓取内容，并解析抓取的结果。不过这个类必须继承 Scrapy 提供的 Spider 类 scrapy.Spider，还要定义 Spider 的名称和起始请求，以及怎样处理爬取后的结果的方法。 也可以使用命令行创建一个 Spider。比如要生成 Quotes 这个 Spider，可以执行如下命令：进入刚才创建的 tutorial 文件夹，然后执行 genspider 命令。第一个参数是 Spider 的名称，第二个参数是网站域名。执行完毕之后，spiders 文件夹中多了一个 quotes.py，它就是刚刚创建的 Spider，内容如下所示：</p>
+							<p>这里有三个属性 ——name、allowed_domains 和 start_urls，还有一个方法 parse。 name，它是每个项目唯一的名字，用来区分不同的 Spider。 allowed_domains，它是允许爬取的域名，如果初始或后续的请求链接不是这个域名下的，则请求链接会被过滤掉。 start_urls，它包含了 Spider 在启动时爬取的 url 列表，初始请求是由它来定义的。 parse，它是 Spider 的一个方法。默认情况下，被调用时 start_urls 里面的链接构成的请求完成下载执行后，返回的响应就会作为唯一的参数传递给这个函数。该方法负责解析返回的响应、提取数据或者进一步生成要处理的请求</p>
+							<p></p>
+							<img src="img2/timthumb2.jpg" style="width:870px; height: 200px; margin-left: 1%;" />
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--part3end-->
+
+		<!--地址-->
+		<div class="footer">
+			<div class="container">
+				<p>Copyright © 2019 Hopetree. Powered by Django.</p>
+				<p>粤ICP备XXXXXXX号-3 | Sitemap | 站长统计 | 网站已续航 XXXX天</p>
+			</div>
+		</div>
+		<!--地址end-->
+		<!--特效-->
+		<script type="text/javascript">
+			! function() {
+				function A(a, b, c) {
+					return a.getAttribute(b) || c
+				}
+
+				function F(a) {
+					return document.getElementsByTagName(a);
+				}
+
+				function D() {
+					var c = F("script"),
+						a = c.length,
+						b = c[a - 1];
+					return {
+						l: a,
+						z: A(b, "zIndex", -1),
+						o: A(b, "opacity", 0.5),
+						c: A(b, "color", "0,0,0"),
+						n: A(b, "count", 199)
+					}
+				}
+
+				function E() {
+					x = i.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+					B = i.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				}
+
+				function M() {
+					J.clearRect(0, 0, x, B);
+					var c = [I].concat(v);
+					var b, d, a, g, e, f;
+					v.forEach(function(h) {
+							h.x += h.xa,
+								h.y += h.ya,
+								h.xa *= h.x > x || h.x < 0 ? -1 : 1,
+								h.ya *= h.y > B || h.y < 0 ? -1 : 1,
+								J.fillRect(h.x - 0.5, h.y - 0.5, 1, 1);
+							for(d = 0; d < c.length; d++) {
+								b = c[d];
+								if(h !== b && null !== b.x && null !== b.y) {
+									g = h.x - b.x;
+									e = h.y - b.y;
+									f = g * g + e * e;
+									f < b.max && (b === I && f >= b.max / 2 && (h.x -= 0.03 * g, h.y -= 0.03 * e), a = (b.max - f) / b.max, J.beginPath(),
+										J.lineWidth = a / 2, J.strokeStyle = "rgba(" + w.c + "," + (a + 0.2) + ")", J.moveTo(h.x, h.y), J.lineTo(b.x,
+											b.y), J.stroke())
+								}
+							}
+							c.splice(c.indexOf(h), 1);
+						}),
+						C(M);
+				}
+
+				var i = document.createElement("canvas"),
+					w = D(),
+					L = "c_n" + w.l, //c_n2
+					J = i.getContext("2d"),
+					x,
+					B,
+					C = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(a) {
+						window.setTimeout(a, 1000 / 45)
+					},
+					N = Math.random,
+					I = {
+						x: null,
+						y: null,
+						max: 20000
+					};
+				i.id = L;
+				i.style.cssText = "position:fixed;top:0;left:0;z-index:" + w.z + ";opacity:" + w.o;
+				F("body")[0].appendChild(i);
+				E();
+				window.onresize = E;
+				window.onmousemove = function(a) {
+					a = a || window.event,
+						I.x = a.clientX,
+						I.y = a.clientY
+				};
+				window.onmouseout = function() {
+					I.x = null,
+						I.y = null
+				};
+				for(var v = [], z = 0; w.n > z; z++) {
+					var G = N() * x,
+						H = N() * B,
+						y = 2 * N() - 1,
+						K = 2 * N() - 1;
+					v.push({
+						x: G,
+						y: H,
+						xa: y,
+						ya: K,
+						max: 6000
+					});
+				}
+				setTimeout(function() {
+					M()
+				}, 100)
+			}();
+		</script>
+		<!--特效 end-->
+		<!--日历-->
+		
+		<!--日历 end-->
+
+	</body>
+
+</html>

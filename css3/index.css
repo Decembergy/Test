@@ -1,0 +1,16 @@
+#con{
+	margin-left: 40%;
+	margin-top: 5%;
+}
+.header{
+	background: gray;
+	height: 150px;
+}
+.key{
+	font-size: 3px;
+	color: red;
+}
+table td{
+margin-top:10px; 上间距
+margin-bottom:10px; 下间距
+}
